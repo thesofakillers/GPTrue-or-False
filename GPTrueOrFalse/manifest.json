@@ -2,12 +2,29 @@
   "manifest_version": 2,
   "name": "GPTrue or False",
   "version": "1.0.0",
-  "description": "Display OpenAI's GPT-2 log probability of a sample of selected text.",
+  "description": "Display OpenAI's GPT-2 log probability of a sample of text.",
   "icons": {
     "16": "Images/Icons/icon16.png",
     "32": "Images/Icons/icon32.png",
     "64": "Images/Icons/icon64.png",
     "512": "Images/Icons/icon512.png"
   },
-  "author": "Giulio Starace"
+  "author": "Giulio Starace",
+  "content_scripts": [
+    {
+      "js": [
+        "webextension-polyfill/browser-polyfill.min.js",
+        "content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": {
+      "16": "Images/Icons/icon16.png",
+      "32": "Images/Icons/icon32.png"
+    },
+    "default_popup": "popup/index.html",
+    "default_title": "GPTrue or False"
+  }
 }
