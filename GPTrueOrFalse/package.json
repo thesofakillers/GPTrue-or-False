@@ -4,7 +4,8 @@
   "description": "Display OpenAI's GPT-2 log probability of a sample of text.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/thesofakillers/openai-gpt-2-browser-extension/issues"
   },
-  "homepage": "https://github.com/thesofakillers/openai-gpt-2-browser-extension#readme"
+  "homepage": "https://github.com/thesofakillers/openai-gpt-2-browser-extension#readme",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "webextension-polyfill": "^0.5.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {}
 }
