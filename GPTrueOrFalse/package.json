@@ -1,0 +1,27 @@
+{
+  "name": "gptrueorfalse",
+  "version": "1.0.0",
+  "description": "Display OpenAI's GPT-2 log probability of a sample of text.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesofakillers/openai-gpt-2-browser-extension.git"
+  },
+  "keywords": [
+    "openAI",
+    "gpt2",
+    "browser",
+    "extension",
+    "chrome",
+    "firefox"
+  ],
+  "author": "Giulio Starace",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/thesofakillers/openai-gpt-2-browser-extension/issues"
+  },
+  "homepage": "https://github.com/thesofakillers/openai-gpt-2-browser-extension#readme"
+}
