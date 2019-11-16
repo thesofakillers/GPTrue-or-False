@@ -1,10 +1,22 @@
 body {
-  width: 200px;
+  width: 500px;
+}
+
+p {
+  text-align: justify;
+}
+
+button {
   text-align: center;
 }
 
-#action {
+#selectedText {
   background: url("../images/icon/16.png") no-repeat center;
   width: 32px;
   height: 32px;
+}
+
+.pageParagraphs {
+  /* hide this div for now since first working version will not have this option */
+  visibility: hidden;
 }

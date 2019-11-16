@@ -3,13 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="../global.css" />
+    <link
+      rel="stylesheet"
+      href="../libraries/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <p>Curious?</p>
-    <button id="action"></button>
+    <h1>GPTrue or False</h1>
+    <p>
+      Display OpenAI's GPT-2 log probability of a sample of text. Is the given
+      text falsely generated?
+    </p>
+    <div class="selectedText">
+      <h3>Determine realness of selected text</h3>
+      <p>
+        Select at least 50 words from your webpage and press the button below to
+        determine the realness of the selected text.
+      </p>
+      <div class="col text-center">
+        <button type="button" class="btn btn-primary" id="evaluateSelectedText">
+          True or False?
+        </button>
+      </div>
+    </div>
+    <div class="pageParagraphs">
+      <p>placeholder text</p>
+    </div>
+    <script src="../libraries/jquery-3.3.1.slim.min.js"></script>
+    <script src="../libraries/popper.min.js"></script>
+    <script src="../libraries/bootstrap.min.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

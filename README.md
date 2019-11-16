@@ -18,6 +18,4 @@ I would like to thank Alexandre Girard of [JoliBrain](https://github.com/jolibra
 
 I would like to thank the team at [Hugging Face](https://huggingface.co/) for hosting OpenAI's detector publically.
 
-I would like to thank [Filip Stanis](https://github.com/fstanis) for providing a [boilerplate](https://github.com/fstanis/webextensions-webpack-boilerplate) for utilizing [webpack](https://webpack.js.org/) with the [WebExtensions API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions).
-
 And of course, I would like to thank the team at [OpenAI](https://openai.com/) for developing GPT-2 in the first place.
