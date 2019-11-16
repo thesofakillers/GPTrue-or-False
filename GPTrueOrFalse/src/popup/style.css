@@ -1,0 +1,10 @@
+body {
+  width: 200px;
+  text-align: center;
+}
+
+#action {
+  background: url("../images/icon/16.png") no-repeat center;
+  width: 32px;
+  height: 32px;
+}

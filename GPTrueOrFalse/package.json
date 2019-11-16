@@ -2,34 +2,34 @@
   "name": "gptrueorfalse",
   "version": "1.0.0",
   "description": "Display OpenAI's GPT-2 log probability of a sample of text.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
-  },
+  "author": "Giulio Starace <giulio.starace@gmail.com>",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thesofakillers/openai-gpt-2-browser-extension.git"
+    "url": "git+https://github.com/thesofakillers/openai-gpt-2-browser-extenesion.git"
   },
-  "keywords": [
-    "openAI",
-    "gpt2",
-    "browser",
-    "extension",
-    "chrome",
-    "firefox"
-  ],
-  "author": "Giulio Starace",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/thesofakillers/openai-gpt-2-browser-extension/issues"
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
   },
-  "homepage": "https://github.com/thesofakillers/openai-gpt-2-browser-extension#readme",
   "devDependencies": {
-    "axios": "^0.19.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "extract-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "extricate-loader": "^2.0.0",
+    "file-loader": "^1.1.5",
+    "html-loader": "^0.5.1",
+    "imports-loader": "^0.7.1",
+    "interpolate-loader": "^2.0.0",
+    "prop-loader": "^1.0.0",
+    "raw-loader": "^0.5.1",
+    "spawn-loader": "^4.0.0",
     "webextension-polyfill": "^0.5.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
-  },
-  "dependencies": {}
+    "webpack": "^3.7.1"
+  }
 }
