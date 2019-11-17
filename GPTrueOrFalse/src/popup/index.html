@@ -13,29 +13,38 @@
   </head>
 
   <body>
-    <h1>GPTrue or False</h1>
-    <p>
-      Display OpenAI's GPT-2 log probability of a sample of text. Is the given
-      text falsely generated?
-    </p>
-    <div class="selectedText">
-      <h3>Determine realness of selected text</h3>
+    <div class="bg-image"></div>
+    <div class="main m-5 p-4">
+      <h1>GPTrue or False</h1>
       <p>
-        Select at least 50 words from your webpage and press the button below to
-        determine the realness of the selected text.
+        Display OpenAI's GPT-2 log probability of a sample of text. Is the given
+        text falsely generated?
       </p>
-      <div class="col text-center">
-        <button type="button" class="btn btn-primary" id="evaluateSelectedText">
-          True or False?
-        </button>
+      <div class="selectedText">
+        <h4>Determine realness of selected text</h4>
+        <p>
+          Select at least 50 words from your webpage and press the button below
+          to determine the realness of the selected text.
+        </p>
+        <div class="col text-center">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="evaluateSelectedText"
+            disabled
+          >
+            Select at least 50 words!
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="pageParagraphs">
-      <p>placeholder text</p>
+      <div class="pageParagraphs">
+        <p>placeholder text</p>
+      </div>
     </div>
     <script src="../libraries/jquery-3.3.1.slim.min.js"></script>
     <script src="../libraries/popper.min.js"></script>
     <script src="../libraries/bootstrap.min.js"></script>
+    <script src="../libraries/browser-polyfill.min.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

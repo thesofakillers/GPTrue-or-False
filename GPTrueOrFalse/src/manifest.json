@@ -14,7 +14,7 @@
     {
       "js": [
         "libraries/browser-polyfill.min.js",
-        "content/index.js"
+        "content/content.js"
       ],
       "matches": [
         "<all_urls>"
