@@ -12,7 +12,7 @@ window.onload = () => {
       })
       .then(res => {
         // if it is, do nothing for this promise
-        if (res.reply) return Promise.resolve();
+        if (res) return Promise.resolve();
       })
       .catch(() => {
         // an error being thrown signals the content script not being loaded, load it.
@@ -49,7 +49,6 @@ window.onload = () => {
           return deactivateButton("evaluateSelectedText", selected_words);
         }
       })
-      .catch(err => console.log(err))
   );
 };
 
