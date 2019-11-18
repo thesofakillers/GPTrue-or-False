@@ -11,22 +11,8 @@
   },
   "author": "Giulio Starace",
   "permissions": [
-    "https://huggingface.co/*"
-  ],
-  "content_scripts": [
-    {
-      "css": [
-        "content/content.css"
-      ],
-      "js": [
-        "libraries/browser-polyfill.min.js",
-        "libraries/jquery-3.3.1.slim.min.js",
-        "content/content.js"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    }
+    "https://huggingface.co/*",
+    "activeTab"
   ],
   "browser_action": {
     "browser_style": true,

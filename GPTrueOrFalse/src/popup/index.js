@@ -1,6 +1,22 @@
 window.onload = () => {
-  browser.tabs
-    .query({ active: true, currentWindow: true })
+  return browser.tabs
+    .executeScript({
+      file: "./libraries/jquery-3.3.1.slim.min.js"
+    })
+    .then(() => {
+      return browser.tabs.executeScript({
+        file: "./libraries/browser-polyfill.min.js"
+      });
+    })
+    .then(() => {
+      return browser.tabs.executeScript({
+        file: "./content/content.js"
+      });
+    })
+    .then(res => {
+      console.log(res);
+      return browser.tabs.query({ active: true, currentWindow: true });
+    })
     .then(query_result => {
       return browser.tabs.sendMessage(query_result[0].id, {
         type: "selection-check"
