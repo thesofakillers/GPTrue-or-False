@@ -4,7 +4,6 @@ window.onload = () => {
     browser.tabs
       .query({ active: true, currentWindow: true })
       .then(query_result => {
-        console.log(query_result);
         // ask it if the content script is already loaded
         return browser.tabs.sendMessage(query_result[0].id, {
           type: "loaded-check"
