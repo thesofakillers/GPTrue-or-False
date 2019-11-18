@@ -24,5 +24,11 @@
     },
     "default_popup": "popup/index.html",
     "default_title": "GPTrue or False"
+  },
+  "background": {
+    "scripts": [
+      "./libraries/browser-polyfill.min.js",
+      "./background/background.js"
+    ]
   }
 }

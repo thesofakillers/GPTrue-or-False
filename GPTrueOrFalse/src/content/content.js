@@ -11,8 +11,6 @@ function gotMessage(message) {
     return checkSelection();
   } else if (message.type === "evaluate") {
     return evaluateSelection();
-  } else if (message.type === "loaded-check") {
-    return Promise.resolve({ reply: true });
   }
 }
 
@@ -89,7 +87,7 @@ function getSelectedText() {
   return text;
 }
 
-// generates HSL string given on a percentage between a start and end color
+// generates HSL string given a percentage between a start and end color
 function generateHSLString(percent, start, end) {
   let fraction = percent / 100;
   let offset = (end - start) * fraction;

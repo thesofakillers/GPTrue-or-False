@@ -1,33 +1,43 @@
 window.onload = () => {
-  // get the current tab
+  //check if the ask background script for list of tabs with loaded
   return (
-    browser.tabs
-      .query({ active: true, currentWindow: true })
-      .then(query_result => {
-        // ask it if the content script is already loaded
-        return browser.tabs.sendMessage(query_result[0].id, {
-          type: "loaded-check"
-        });
-      })
-      .then(res => {
-        // if it is, do nothing for this promise
-        if (res) return Promise.resolve();
-      })
-      .catch(() => {
-        // an error being thrown signals the content script not being loaded, load it.
+    browser.runtime
+      .sendMessage({ type: "get-injected" })
+      .then(injected_obj => {
         return browser.tabs
-          .executeScript({
-            file: "./libraries/jquery-3.3.1.slim.min.js"
-          })
-          .then(() => {
-            return browser.tabs.executeScript({
-              file: "./libraries/browser-polyfill.min.js"
-            });
-          })
-          .then(() => {
-            return browser.tabs.executeScript({
-              file: "./content/content.js"
-            });
+          .query({ active: true, currentWindow: true })
+          .then(query_result => {
+            let current_tab_id = query_result[0].id;
+            // if the current tab has already been injected
+            if (injected_obj[current_tab_id]) {
+              return Promise.resolve();
+            } else {
+              // update the injected list in the background script
+              return browser.runtime
+                .sendMessage({
+                  type: "injection-update",
+                  content: {
+                    task: "append",
+                    value: current_tab_id
+                  }
+                })
+                .then(() => {
+                  // inject the necessary scripts otherwise.
+                  return browser.tabs.executeScript({
+                    file: "/libraries/jquery-3.3.1.slim.min.js"
+                  });
+                })
+                .then(() => {
+                  return browser.tabs.executeScript({
+                    file: "/libraries/browser-polyfill.min.js"
+                  });
+                })
+                .then(() => {
+                  return browser.tabs.executeScript({
+                    file: "/content/content.js"
+                  });
+                });
+            }
           });
       })
       // check that enough words are selected
@@ -48,6 +58,7 @@ window.onload = () => {
           return deactivateButton("evaluateSelectedText", selected_words);
         }
       })
+      .catch(err => console.log(err))
   );
 };
 
