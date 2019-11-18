@@ -11,6 +11,8 @@ function gotMessage(message) {
     return checkSelection();
   } else if (message.type === "evaluate") {
     return evaluateSelection();
+  } else if (message.type === "loaded-check") {
+    return Promise.resolve({ reply: true });
   }
 }
 
@@ -28,6 +30,16 @@ function evaluateSelection() {
   }
   // parse the selected text
   let text = selection.toString();
+  // mark the element after which to insert the result of the evaluation
+  element.className += " " + "afterMeGpt2";
+  // prepare the message element
+  let message_element = $("<p class='GPT2Message'>Loading...</p>");
+  message_element.css("border", "2px dashed grey");
+  message_element.css("border-top", "5px solid grey");
+  message_element.css("font-family", "monospace");
+  message_element.css("font-size", "14px");
+  // insert the message element
+  message_element.insertAfter(".afterMeGpt2");
   // evaluate
   fetch(
     "https://huggingface.co/openai-detector/?" +
@@ -40,16 +52,13 @@ function evaluateSelection() {
       let used_tokens = json.used_tokens;
       let realness = Math.round(json.real_probability * 100 * 100) / 100;
       let css_color_string = generateHSLString(realness, 0, 120);
-      // mark the element after which to insert the result of the evaluation
-      element.className += " " + "afterMeGpt2";
+
       // prepare the message
       let message_text = `According to the detector, there is a ${realness} % chance that the selected text is real. ${used_tokens} out of ${all_tokens} tokens were considered`;
-      // prepare the message element
-      let message_element = $(`<p class='GPT2Message'>${message_text}</p>`);
+      // update the message element with the outcome
+      message_element.text(message_text);
       message_element.css("border", `2px dashed ${css_color_string}`);
       message_element.css("border-top", `5px solid ${css_color_string}`);
-      // insert the message element
-      message_element.insertAfter(".afterMeGpt2");
     })
     .catch(err => console.log(err));
 }

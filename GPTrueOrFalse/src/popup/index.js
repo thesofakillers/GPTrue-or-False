@@ -1,38 +1,59 @@
 window.onload = () => {
-  return browser.tabs
-    .executeScript({
-      file: "./libraries/jquery-3.3.1.slim.min.js"
-    })
-    .then(() => {
-      return browser.tabs.executeScript({
-        file: "./libraries/browser-polyfill.min.js"
-      });
-    })
-    .then(() => {
-      return browser.tabs.executeScript({
-        file: "./content/content.js"
-      });
-    })
-    .then(res => {
-      console.log(res);
-      return browser.tabs.query({ active: true, currentWindow: true });
-    })
-    .then(query_result => {
-      return browser.tabs.sendMessage(query_result[0].id, {
-        type: "selection-check"
-      });
-    })
-    .then(res => {
-      let selected_words = res.token_number;
-      if (selected_words > 50) {
-        return activateButton("evaluateSelectedText");
-      } else {
-        return deactivateButton("evaluateSelectedText", selected_words);
-      }
-    })
-    .catch(err => console.log(err));
+  // get the current tab
+  return (
+    browser.tabs
+      .query({ active: true, currentWindow: true })
+      .then(query_result => {
+        console.log(query_result);
+        // ask it if the content script is already loaded
+        return browser.tabs.sendMessage(query_result[0].id, {
+          type: "loaded-check"
+        });
+      })
+      .then(res => {
+        // if it is, do nothing for this promise
+        if (res.reply) return Promise.resolve();
+      })
+      .catch(() => {
+        // an error being thrown signals the content script not being loaded, load it.
+        return browser.tabs
+          .executeScript({
+            file: "./libraries/jquery-3.3.1.slim.min.js"
+          })
+          .then(() => {
+            return browser.tabs.executeScript({
+              file: "./libraries/browser-polyfill.min.js"
+            });
+          })
+          .then(() => {
+            return browser.tabs.executeScript({
+              file: "./content/content.js"
+            });
+          });
+      })
+      // check that enough words are selected
+      .then(() => {
+        return browser.tabs.query({ active: true, currentWindow: true });
+      })
+      .then(query_result => {
+        return browser.tabs.sendMessage(query_result[0].id, {
+          type: "selection-check"
+        });
+      })
+      .then(res => {
+        // Activate or deactivate button dependng on number of words
+        let selected_words = res.token_number;
+        if (selected_words >= 50) {
+          return activateButton("evaluateSelectedText");
+        } else {
+          return deactivateButton("evaluateSelectedText", selected_words);
+        }
+      })
+      .catch(err => console.log(err))
+  );
 };
 
+// orders content script to evaluate
 document.getElementById("evaluateSelectedText").onclick = () => {
   browser.tabs
     .query({ active: true, currentWindow: true })
