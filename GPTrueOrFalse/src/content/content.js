@@ -43,7 +43,7 @@ function evaluateSelection() {
   // evaluate
   fetch(
     "https://huggingface.co/openai-detector/?" +
-      encodeURI(text.replace(/[\r\n]+/g, ""))
+      encodeURI(text.replace(/[\r\n]+/g, " "))
   )
     .then(response => response.json())
     .then(json => {

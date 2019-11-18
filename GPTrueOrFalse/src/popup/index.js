@@ -40,7 +40,7 @@ window.onload = () => {
         });
       })
       .then(res => {
-        // Activate or deactivate button dependng on number of words
+        // Activate or deactivate button depending on number of words
         let selected_words = res.token_number;
         if (selected_words >= 50) {
           return activateButton("evaluateSelectedText");
