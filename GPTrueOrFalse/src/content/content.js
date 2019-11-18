@@ -23,9 +23,9 @@ function evaluateSelection() {
   // get the selected text
   let selection = window.getSelection();
   // determine which node is at the bottom of the selection and assign it to the element
-  if (selection.anchorOffset && !selection.focusOffset) {
+  if (selection.anchorOffset) {
     element = selection.anchorNode.parentNode;
-  } else if (selection.focusOffset && !selection.anchorOffset) {
+  } else if (selection.focusOffset) {
     element = selection.focusNode.parentNode;
   }
   // parse the selected text
