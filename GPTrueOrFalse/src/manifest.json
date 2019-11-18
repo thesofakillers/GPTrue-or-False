@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "GPTrue or False",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Display OpenAI's GPT-2 log probability of a sample of text.",
   "icons": {
     "16": "./images/icon/16.png",
