@@ -10,6 +10,13 @@ The extension is written using [Mozilla](https://www.mozilla.org/en-US/)'s [WebE
 
 The extension makes use of HTTP requests to the [detector API](https://github.com/openai/gpt-2-output-dataset/tree/master/detector) designed by OpenAI and hosted publicly [here](https://huggingface.co/openai-detector/) by [Hugging Face](https://huggingface.co/) (huge thanks!).
 
+## Use the Extension
+
+The extension works on both Chrome and Firefox. Follow the links below to install it on your preferred browser:
+
+- [Chrome Link](https://chrome.google.com/webstore/search/Gptrue%20or%20false)
+- [Firefox Link](https://addons.mozilla.org/en-US/firefox/addon/gptrue-or-false/)
+
 ## Thanks
 
 I would like to thank Andrew Karpathy for the idea and [David Ma](http://david.ma/) for [retweeting it](https://twitter.com/madavidj/status/1192189367579639810?s=20) with some incentive.
