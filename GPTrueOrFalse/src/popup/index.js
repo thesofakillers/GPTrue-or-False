@@ -7,10 +7,11 @@ window.onload = () => {
       });
     })
     .then(res => {
-      if (res.token_number > 50) {
+      let selected_words = res.token_number;
+      if (selected_words > 50) {
         return activateButton("evaluateSelectedText");
       } else {
-        return deactivateButton("evaluateSelectedText");
+        return deactivateButton("evaluateSelectedText", selected_words);
       }
     })
     .catch(err => console.log(err));
@@ -29,14 +30,15 @@ document.getElementById("evaluateSelectedText").onclick = () => {
 
 // activates a given button
 function activateButton(button_id) {
-  let activateButton = document.getElementById(button_id);
-  activateButton.disabled = false;
-  activateButton.innerText = "Determine Realness!";
-  activateButton.className = "btn btn-success";
+  let button = document.getElementById(button_id);
+  button.disabled = false;
+  button.innerText = "Determine Realness!";
+  button.className = "btn btn-success";
 }
 
 // deactivates a given button
-function deactivateButton(button_id) {
-  let activateButton = document.getElementById(button_id);
-  activateButton.disabled = true;
+function deactivateButton(button_id, selection_length) {
+  let button = document.getElementById(button_id);
+  button.innerText = `Select at least 50 words! (${selection_length} Selected)`;
+  button.disabled = true;
 }
