@@ -24,7 +24,7 @@ window.onload = () => {
                 .then(() => {
                   // inject the necessary scripts otherwise.
                   return browser.tabs.executeScript({
-                    file: "/libraries/jquery-3.3.1.slim.min.js"
+                    file: "/libraries/jquery-3.4.1.slim.min.js"
                   });
                 })
                 .then(() => {
