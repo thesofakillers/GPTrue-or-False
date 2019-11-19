@@ -17,6 +17,10 @@ The extension works on both Chrome and Firefox. Follow the links below to instal
 - [Chrome Link](https://chrome.google.com/webstore/search/Gptrue%20or%20false)
 - [Firefox Link](https://addons.mozilla.org/en-US/firefox/addon/gptrue-or-false/)
 
+## Contribute
+
+This repository is public for more than just showing how the extension works. I would be more than happy to have other people work on this project. Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
+
 ## Thanks
 
 I would like to thank Andrew Karpathy for the idea and [David Ma](http://david.ma/) for [retweeting it](https://twitter.com/madavidj/status/1192189367579639810?s=20) with some incentive.
