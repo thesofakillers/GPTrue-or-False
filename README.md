@@ -14,7 +14,7 @@ The extension makes use of HTTP requests to the [detector API](https://github.co
 
 The extension works on both Chrome and Firefox. Follow the links below to install it on your preferred browser:
 
-- [Chrome Link](https://chrome.google.com/webstore/search/Gptrue%20or%20false)
+- [Chrome Link](https://chrome.google.com/webstore/detail/gptrue-or-false/bikcfchmnacmfhneafnpfekgfhckplfj)
 - [Firefox Link](https://addons.mozilla.org/en-US/firefox/addon/gptrue-or-false/)
 
 ## Contribute
