@@ -16,6 +16,7 @@ The pull request process is pretty simple at the moment; simply ensure you follo
 2. The modifications are such that the extension still works on both Chrome and Firefox.
 3. All new/edited code _must_ be commented. Please Refer to the [commenting section](#commenting-your-code) for more details.
 4. All new/edited code _must_ follow [variable, function an class naming](#variable-function-and-class-naming) conventions.
+5. Please ensure you update the version in [manifest.json](./GPTrueOrFalse/src/manifest.json) accordingly based on [semantic versioning guidelines](https://semver.org/)
 
 ## Commenting your code
 
