@@ -78,7 +78,7 @@ document.getElementById("evaluateSelectedText").onclick = () => {
 function activateButton(button_id) {
   let button = document.getElementById(button_id);
   button.disabled = false;
-  button.innerText = "Determine Realness!";
+  button.innerText = "Evaluate!";
   button.className = "btn btn-success";
 }
 

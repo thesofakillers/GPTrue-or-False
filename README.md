@@ -2,7 +2,7 @@
 
 A browser extension that displays the [GPT-2](https://openai.com/blog/better-language-models/) Log Probability of selected portions of text.
 
-Among the many things that [OpenAI](https://openai.com/)'s GPT-2 model can do, one of these is detecting with certain amount of certainty whether a given portion of text is fake or real. This extension hopes to bring this functionality to your browser (Chrome and Firefox).
+Among the many things that [OpenAI](https://openai.com/)'s GPT-2 model can do, one of these is detecting with a certain amount of certainty whether a given portion of text is human-generated. This extension hopes to bring this functionality to your browser (Chrome and Firefox).
 
 Inspired by [this tweet](https://twitter.com/karpathy/status/1192169928079503360?s=20) from [Andrej Karpathy](https://cs.stanford.edu/~karpathy/), the director of AI at [Tesla](https://www.tesla.com/).
 

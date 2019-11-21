@@ -14,7 +14,7 @@ function gotMessage(message) {
   }
 }
 
-// determines how real a portion of selected text is
+// determines how human-like a portion of selected text is
 function evaluateSelection() {
   // initiate element variable
   let element;
@@ -48,11 +48,11 @@ function evaluateSelection() {
       // parse the response from Hugging Face
       let all_tokens = json.all_tokens;
       let used_tokens = json.used_tokens;
-      let realness = Math.round(json.real_probability * 100 * 100) / 100;
-      let css_color_string = generateHSLString(realness, 0, 120);
+      let human_likeness = Math.round(json.real_probability * 100 * 100) / 100;
+      let css_color_string = generateHSLString(human_likeness, 0, 120);
 
       // prepare the message
-      let message_text = `According to the detector, there is a ${realness} % chance that the selected text is real. ${used_tokens} out of ${all_tokens} tokens were considered`;
+      let message_text = `According to the detector, there is a ${human_likeness} % chance that the selected text written by a human. ${used_tokens} out of ${all_tokens} tokens were considered.`;
       // update the message element with the outcome
       message_element.text(message_text);
       message_element.css("border", `2px dashed ${css_color_string}`);
