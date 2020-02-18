@@ -26,12 +26,12 @@ The pull request process is pretty simple at the moment; simply ensure you follo
    - add functionality
 2. The modifications are such that the extension still works on both Chrome and Firefox.
 3. All new/edited code _must_ be commented. Please Refer to the [commenting section](#commenting-your-code) for more details.
-4. All new/edited code _must_ follow [variable, function an class naming](#variable-function-and-class-naming) conventions.
+4. All new/edited code _must_ follow [variable, function and class naming](#variable-function-and-class-naming) conventions.
 5. Please ensure you update the version in [manifest.json](./src/manifest.json) accordingly based on [semantic versioning guidelines](https://semver.org/)
 
 ### Commenting your code
 
-I am aware that perhaps I over-comment my code. That being said, I would much prefer that you over-comment than not comment at all. Comments can always be removed in minification if we ever decide to add that. They same cannot be said about the opposite.
+I am aware that perhaps I over-comment my code. That being said, I would much prefer that you over-comment than not comment at all. Comments can always be removed in minification if we ever decide to add that. The same cannot be said about the opposite.
 
 I believe that in collaboration, comments are essential.
 
