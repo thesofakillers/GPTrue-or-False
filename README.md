@@ -23,7 +23,7 @@ This repository is public for more than just showing how the extension works. I 
 
 ## Thanks
 
-I would like to thank Andrew Karpathy for the idea and [David Ma](http://david.ma/) for [retweeting it](https://twitter.com/madavidj/status/1192189367579639810?s=20) with some incentive.
+I would like to thank Andrej Karpathy for the idea and [David Ma](http://david.ma/) for [retweeting it](https://twitter.com/madavidj/status/1192189367579639810?s=20) with some incentive.
 
 I would like to thank Alexandre Girard of [JoliBrain](https://github.com/jolibrain) for a [quick demo](https://gist.github.com/alx/d1efbedc930a618a73a27a3df0a1e4b6) he posted and putting pressure on me to get to work on this before someone else did.
 
